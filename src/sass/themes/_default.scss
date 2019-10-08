@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+// base
+p {
+  margin:0;
+}
+ul, ol, li{
+  margin:0;
+}
+ul{
+  padding-left:1em;
+  list-style: disc;
+}
+
+// grid
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+nav {
+  background-color: #fff;
+}
+#header {
+  .nav-wrapper {
+    max-width: $large-screen;
+    margin: 0 auto;
+  }
+}
+#contents {
+  flex: 1 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 93%;
+  max-width: 1280px;
+}
+.row {
+  padding: 0 1.5%;
+}
+@media #{$large-and-up} {
+  .container {
+    width: 93%;
+  }
+}
+@media #{$small-and-down} {
+  .container {
+    width: auto;
+    padding: 0 20px;
+  }
+  .row {
+    padding: 0;
+    .col {
+      &.s12 {
+        padding: 0;
+      }
+    }
+  }
+}
+
+//
+.z-depth-1 {
+  box-shadow: none !important;
+}
+
+// home
+.page_index {
+  .recent-post {
+    display:block;
+    color:$text-color;
+    .cover {
+      width: 100%;
+      padding-top: 42.5%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+      @extend .z-depth-1;
+    }
+    .content {
+      margin-top: -3.4em;
+      .card-panel{
+        // margin:0 3%;
+      }
+      .description{
+        font-size:16px;
+      }
+    }
+  }
+  @media #{$small-and-down} {
+    .recent-post {
+      .cover {
+        padding-top: 50%;
+      }
+      .content {
+        margin-top: 0;
+      }
+      .card-panel {
+        padding:24px 8px;
+      }
+    }
+  }
+}
+
+// post
+.page_post-list {
+
+}
+
+.page_post-content {
+  .post-cover {
+    width:auto;
+    @media #{$small-and-down} {
+      width:auto;
+      padding: 0;
+    }
+    @media #{$medium-and-down} {
+      max-width:none;
+    }
+    @media #{$large-and-up} {
+      // max-width:89%;
+    }
+    @media #{$extra-large-and-up} {
+      max-width:1280px;
+    }
+    .cover {
+      padding-top: 42.5%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+      @extend .z-depth-1;
+      @media #{$small-and-down} {
+        padding-top: 50%;
+      }
+      @media #{$large-and-up} {
+        // float:right;
+        // width: 92%;
+        margin-left:8%;
+      }
+    }
+    .content {
+      clear:both;
+      padding:0;
+      @media #{$small-and-down} {
+        margin-top: 0;
+      }
+      @media #{$medium-and-down} {
+        // margin-left:3.5%
+      }
+      @media #{$medium-and-up} {
+        margin-top: -3.4em;
+        margin-left:3.5%;
+      }
+      @media #{$large-and-up} {
+        margin-left:0;
+      }
+      .col{
+        padding:0;
+      }
+      .card-panel{
+        margin:0;
+        @media #{$medium-and-up} {
+          margin-left:0;
+        }
+        @media #{$large-and-up} {
+          margin-left:1%;
+        }
+      }
+      .post-meta{
+        font-size:16px;
+      }
+    }
+  }
+
+  .post-content {
+    font-family: $conts-font-stack;
+    font-weight: normal;
+    @media #{$large-and-up} {
+      padding: 0 24px 0 24%;
+    }
+
+    h2{@extend .h5;}
+    h3{@extend .h6;}
+    h4{@extend .h6;}
+    h5{@extend .h6;}
+    h6{@extend .h6;}
+    p{font-family: $conts-font-stack;}
+  }
+}

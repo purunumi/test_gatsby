@@ -1,0 +1,67 @@
+// Syntax highlighting sass properties and inclusion
+// $base-font-size: 1em;
+// $spacing-unit: 30px !default;
+
+// %vertical-rhythm {
+//   margin-bottom: $spacing-unit / 2;
+// }
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Vendors
+@import
+  'vendors/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/grid',
+  'layout/header',
+  'layout/footer';
+
+// 5. Components
+@import
+  'components/global',
+  'components/badges',
+  'components/icons-material-design',
+  'components/navbar',
+  'components/transitions',
+  'components/cards',
+  'components/toast',
+  'components/tabs',
+  'components/tooltip',
+  'components/buttons',
+  'components/dropdown',
+  'components/waves',
+  'components/modal',
+  'components/collapsible',
+  'components/chips',
+  'components/materialbox',
+  'components/forms/forms',
+  'components/table_of_contents',
+  'components/sidenav',
+  'components/preloader',
+  'components/slider',
+  'components/carousel',
+  'components/tapTarget',
+  'components/pulse',
+  'components/datepicker',
+  'components/timepicker';
+
+// 6. Page-specific styles
+@import
+  'pages/home';
+
+// 7. Themes
+@import
+  'themes/default';

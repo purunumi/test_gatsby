@@ -1,0 +1,73 @@
+/**
+ * Basic typography style for copy text
+ */
+
+html,
+body{
+  line-height: 1.6;
+
+  @media only screen and (min-width: 0) {
+    font-size: 14px;
+  }
+
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 14.5px;
+  }
+
+  @media only screen and (min-width: $large-screen) {
+    font-size: 15px;
+  }
+
+  font-family: $font-stack;
+  // font-weight: normal;
+  font-weight: 300;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+// Header Styles
+@for $i from 1 through length($h-fontsize) {
+  h#{$i}, .h#{$i} {
+    margin: 0 0 (nth($h-fontsize, $i) / 2) 0;
+    font-size: nth($h-fontsize, $i);
+    line-height: 140%;
+    font-weight: 700;
+    &:nth-child(n+2) {
+      margin-top: nth($h-fontsize, $i) / 1.15;
+    }
+  }
+  h#{$i} a, .h#{$i} a {
+    font-weight: inherit;
+  }
+}
+
+// Text Styles
+em { font-style: italic; }
+strong { font-weight: 700; }
+small { font-size: 75%; }
+.light { font-weight: 300; }
+.thin { font-weight: 200; }
+
+.flow-text{
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width : 360 + ($i * $interval-size)) {
+      font-size: 1.2rem * (1 + (.02 * $i));
+    }
+    $i: $i + 1;
+  }
+
+  // Handle below 360px screen
+  @media only screen and (max-width: 360px) {
+    font-size: 1.2rem;
+  }
+}
