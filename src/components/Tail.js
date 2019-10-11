@@ -18,17 +18,17 @@ const Tail = () => (
   // </footer>
   <Footer
     copyrights="© 2019 Copyright Text"
-    moreLinks={<a href="#!">test</a>}
-    links={<ul />}
-    className="example"
-  >
-    <h5 className="white-text">
-      Footer Content
-    </h5>
-    <p className="grey-text text-lighten-4">
-      You can use rows and columns here to organize your footer content.
-    </p>
-  </Footer>
+    moreLinks={
+      <div className="right">
+        <a href="#!" className="grey-text">github</a>
+        {' '}
+        <a href="#!" className="grey-text">twitter</a>
+        {' '}
+        <a href="#!" className="grey-text">facebook</a>
+      </div>
+    }
+    links={false}
+  />
 )
 
 export default Tail

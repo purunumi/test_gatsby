@@ -1,15 +1,29 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 
+import Layout from "../components/Layout"
+
 export default function Template({data}){
   const {markdownRemark: {frontmatter, html}} = data;
 
   return (
-    <div>
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.data}</h2>
-      <div dangerouslySetInnerHTML = {{__html: html}} />
-    </div>
+    <Layout wrap="page_post-content">
+      <div className="post-cover container">
+        <div className="cover" style={{ backgroundImage: `url('https://placehold.it/640x700')` }} />
+        <div className="content row">
+          <div className="col s12 m7 l6">
+            <div className="card-panel">
+              <h1 className="h5">{frontmatter.title}</h1>
+              <p className="post-meta">
+                <time>{frontmatter.data}</time>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div dangerouslySetInnerHTML = {{__html: html}} className="post-content container" />
+    </Layout>
   );
 };
 
