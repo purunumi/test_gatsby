@@ -3,18 +3,18 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 function BlogFeed({data}){
-  const {markdownRemark: {frontmatter, html}} = graphql`
-    query($path: String!){
-      markdownRemark(frontmatter: {path: {eq: $path}}){
-        html
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          path
-          title
-        }
-      }
-    }
-  `;
+  // const {markdownRemark: {frontmatter, html}} = graphql`
+  //   query($path: String!){
+  //     markdownRemark(frontmatter: {path: {eq: $path}}){
+  //       html
+  //       frontmatter {
+  //         date(formatString: "MMMM DD, YYYY")
+  //         path
+  //         title
+  //       }
+  //     }
+  //   }
+  // `;
   // post list: https://www.gatsbyjs.org/docs/adding-a-list-of-markdown-blog-posts/
 
   return (
