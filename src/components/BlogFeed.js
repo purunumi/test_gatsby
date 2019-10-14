@@ -1,36 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 
-function BlogFeed({data}){
-  // const {markdownRemark: {frontmatter, html}} = graphql`
-  //   query($path: String!){
-  //     markdownRemark(frontmatter: {path: {eq: $path}}){
-  //       html
-  //       frontmatter {
-  //         date(formatString: "MMMM DD, YYYY")
-  //         path
-  //         title
-  //       }
-  //     }
-  //   }
-  // `;
-  // post list: https://www.gatsbyjs.org/docs/adding-a-list-of-markdown-blog-posts/
-
+function BlogFeed({ post }){
   return (
-    <div className="row">
-      <div className="col s12 m6 l4">
-        <div className="card small">
-          <div className="card-image">
-            <img src="https://placehold.it/640x700" />
-            <span className="card-title">Consequat veniam commodo aliquip tempor cillum eu.</span>
-          </div>
-          <div className="card-content">
-            <p>Eiusmod amet deserunt reprehenderit in.</p>
-          </div>
-          <div className="card-action">
-            <a href="#!">This is a link</a>
-          </div>
+    <div className="col s12 m6 l4">
+      <div className="card small">
+        <div className="card-image">
+          {/* <img src={post.frontmatter.featuredImage.childImageSharp.fluid.src} /> */}
+          <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
+          <span className="card-title">{post.frontmatter.title}</span>
+        </div>
+        <div className="card-content">
+          <p>{post.excerpt}</p>
+        </div>
+        <div className="card-action">
+          <Link to={post.frontmatter.path}>This is a link</Link>
         </div>
       </div>
     </div>
@@ -38,15 +24,3 @@ function BlogFeed({data}){
 }
 
 export default BlogFeed;
-// export const pageQuery = graphql`
-//   query($path: String!){
-//     markdownRemark(frontmatter: {path: {eq: $path}}){
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         path
-//         title
-//       }
-//     }
-//   }
-// `;

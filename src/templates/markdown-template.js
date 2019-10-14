@@ -9,7 +9,7 @@ export default function Template({data}){
   return (
     <Layout wrap="page_post-content">
       <div className="post-cover container">
-        <div className="cover" style={{ backgroundImage: `url('https://placehold.it/640x700')` }} />
+        <div className="cover" style={{ backgroundImage: `url('${frontmatter.featuredImage.childImageSharp.fluid.src}')` }} />
         <div className="content row">
           <div className="col s12 m7 l6">
             <div className="card-panel">
@@ -35,6 +35,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
