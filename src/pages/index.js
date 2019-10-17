@@ -16,7 +16,7 @@ const IndexPage = ({
   const Posts = edges
     .filter((edge, i) => (!!edge.node.frontmatter.date && i>=1))
     .map(edge => <BlogFeed key={edge.node.id} post={edge.node} />)
-  console.log(edges[0].node.frontmatter.featuredImage.childImageSharp.fluid);
+
   return (
     <Layout wrap="page_index">
       <SEO title="Home" />

@@ -29,6 +29,10 @@ nav {
     max-width: $large-screen;
     margin: 0 auto;
   }
+  .brand-logo{
+    @extend .bold;
+  }
+
 }
 #contents {
   flex: 1 0 auto;

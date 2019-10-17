@@ -1,11 +1,13 @@
 // import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 import {Navbar, NavItem} from "react-materialize"
 
+
 const Header = ({ siteTitle }) => (
-  <Navbar brand={<a href="#!">{siteTitle}</a>} alignLinks="right" sidenav={<li />}>
-    <NavItem href="">
+  <Navbar brand={<Link to='/'>{siteTitle}</Link>} alignLinks="right" sidenav={<li />}>
+    <NavItem href="/">
       Getting started
     </NavItem>
     <NavItem href="components.html">
