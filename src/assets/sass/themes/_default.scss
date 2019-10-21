@@ -16,7 +16,7 @@ ul{
 }
 
 // grid
-body {
+#gatsby-focus-wrapper {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -24,15 +24,45 @@ body {
 nav {
   background-color: #fff;
 }
-#header {
+.page-header {
   .nav-wrapper {
     max-width: $large-screen;
     margin: 0 auto;
   }
   .brand-logo{
+    display:block;
+    margin-top:-2px;
+    padding:0 15px;
+    box-sizing:border-box;
+    font-size:20px;
+    text-decoration: none;;
     @extend .bold;
   }
 
+}
+.page-footer {
+  padding-top:0;
+  > .container{
+    display:none;
+  }
+  .icon{
+    $size:20px;
+    width:$size;
+    height:$size;
+    fill:#fff;
+    opacity:0.8;
+    vertical-align:middle;
+  }
+  .right{
+    a:nth-child(n+2){
+      margin-left:6px;
+    }
+    @media #{$small-and-down} {
+      float:none !important;
+      margin-top:4px;
+      text-align:center;
+    }
+  }
 }
 #contents {
   flex: 1 0 auto;

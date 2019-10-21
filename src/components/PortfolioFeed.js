@@ -6,7 +6,7 @@ const PortfolioFeed = () => {
 
   return (
     <div className="row">
-      <div className="col s12 m6 l4">
+      <div className="col s12 m6">
         <div className="card medium sticky-action">
           <div className="card-image waves-effect waves-block waves-light">
             <img className="activator" src="https://placehold.it/640x700" />

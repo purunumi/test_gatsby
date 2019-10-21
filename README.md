@@ -95,3 +95,14 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+
+
+
+svg
+- https://www.gatsbyjs.org/packages/gatsby-plugin-svg-sprite/?=svg
+nav
+- https://www.gatsbyjs.org/docs/gatsby-link/#how-to-use-the-navigate-helper-function
+html construct
+images
+md construct
