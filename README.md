@@ -106,3 +106,11 @@ nav
 html construct
 images
 md construct
+github
+  $.ajax({
+    url:'//api.github.com/users/purunumi/repos?Authorization=5751edc41449cccee9ddc09c3576d86f6e511c83',
+    dataType:'json',
+    success:function(data){
+      // console.log(data);
+    }
+  })
